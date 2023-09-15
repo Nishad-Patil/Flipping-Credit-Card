@@ -1,0 +1,156 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+/* Back graound */
+section {
+  min-height: 100vh;
+  width: 100%;
+  background: #121312;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  perspective: 1000;
+}
+section::before {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #8a0a8a, #f4f4f4);
+  transform: translate(-150px, -100px);
+  backdrop-filter: blur(150px);
+}
+section::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #f4f4f4, #8a0a8a);
+  transform: translate(150px, 100px);
+}
+.container {
+  height: 225px;
+  width: 375px;
+  position: relative;
+  z-index: 1;
+  transition:  0.6s ease;
+  transform-style: preserve-3d;
+}
+.container:hover{
+  transform: rotateY(180deg);
+
+}
+.container .card{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  background: rgba(225, 225, 225, 0.1);
+  backdrop-filter: blur(25px);
+  padding: 25px;
+  box-shadow:0px 25px 45px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(225, 225, 225, 0.1) ;
+  backface-visibility: hidden;
+}
+
+/* Front face of card CSS */
+ .front-face header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.front-face .logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.logo .logo-img {
+  width: 50px;
+}
+.logo span{
+  font-size: 20px;
+}
+.chip{
+  width: 40px;
+}
+.container .card-details{
+  margin-top: 15px;
+}
+.card-number p{
+  font-size: 15px;
+}
+.card-number span{
+  font-size: 25px;
+  letter-spacing: 1px;
+
+}
+.card-details .validity{
+  display: flex;
+  justify-content: space-between;
+  align-items: last baseline
+}
+.validity p{
+  font-size: 24px;
+}
+.validity .valid-date{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.valid-date p{
+  font-size: 15px;
+}
+.valid-date span{
+  font-size: 20px;
+}
+
+/* Back face of card CSS */
+.card.back-face {
+  padding: 15px 25px 25px 25px;
+  border: none;
+  transform: rotateY(180deg);
+}
+.back-face .customer-service{
+  font-size: 8px;
+}
+.card.back-face .magnetic-strip{
+  position: absolute;
+  background: black;
+  height: 45px;
+  width: 100%;
+  top: 40px;
+  left: 0;
+}
+.card.back-face .cvv{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: 80px;
+  background: #fff;
+  width: 85%;
+  height: 40px;
+  border-radius: 6px;
+}
+.cvv i{
+  color: black;
+  margin-right:-25px;
+  padding: 4px;
+  font-size: 12px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.card.back-face .about{
+font-size: 9px;
+margin: 15px;
+}
